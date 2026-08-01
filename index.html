@@ -39,6 +39,11 @@
                 radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.15) 0px, transparent 50%);
             background-attachment: fixed;
         }
+        
+        /* Ensures images stay contained when they scale up on hover */
+        .avatar-mask {
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+        }
     </style>
 </head>
 <body class="text-gray-100 font-sans min-h-screen flex flex-col justify-between selection:bg-nv-gold selection:text-black">
@@ -47,15 +52,15 @@
     <header class="border-b border-nv-lightgreen/30 bg-nv-dark/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-nv-gold to-nv-lightgreen flex items-center justify-center font-bold text-black shadow-lg shadow-nv-lightgreen/20">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-nv-gold to-nv-lightgreen flex items-center justify-center font-bold text-black shadow-lg shadow-nv-lightgreen/20 hover:rotate-12 transition-transform duration-300">
                     <i class="fa-solid font-black text-xl">S</i>
                 </div>
                 <div>
-                    <h1 class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-nv-accent to-nv-gold bg-clip-text text-transparent">SOLANO</h1>
+                    <h1 class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-nv-accent to-nv-gold bg-clip-text text-transparent hover:[text-shadow:0_0_15px_rgba(212,175,55,0.6)] transition-all duration-300">SOLANO</h1>
                     <p class="text-xs text-emerald-400/80 font-medium tracking-wider uppercase">Nueva Vizcaya Elite</p>
                 </div>
             </div>
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800/50">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800/50 shadow-[0_0_10px_rgba(52,211,153,0.2)]">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping mr-2"></span>
                 Active Team
             </span>
@@ -66,11 +71,12 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow">
         
         <!-- HERO SECTION -->
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
-                Meet the <span class="bg-gradient-to-r from-nv-gold via-yellow-200 to-nv-accent bg-clip-text text-transparent">Squad</span>
+        <div class="text-center max-w-3xl mx-auto mb-16 relative">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-nv-lightgreen/20 blur-[100px] rounded-full pointer-events-none"></div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4 relative z-10">
+                Meet the <span class="bg-gradient-to-r from-nv-gold via-yellow-200 to-nv-accent bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(212,175,55,0.4)]">Squad</span>
             </h2>
-            <p class="text-emerald-200/70 text-sm sm:text-base">
+            <p class="text-emerald-200/70 text-sm sm:text-base relative z-10">
                 Representing Solano, Nueva Vizcaya with pride, talent, and passion.
             </p>
         </div>
@@ -78,35 +84,37 @@
         <!-- EXECUTIVE LEADERSHIP SECTION -->
         <div class="mb-16">
             <div class="flex items-center space-x-3 mb-8 border-b border-nv-lightgreen/20 pb-4">
-                <i class="fa-solid fa-crown text-nv-gold text-xl"></i>
+                <i class="fa-solid fa-crown text-nv-gold text-xl drop-shadow-[0_0_8px_rgba(212,175,55,0.8)]"></i>
                 <h3 class="text-xl font-bold text-white tracking-wide uppercase">Executive Leadership</h3>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
                 <!-- ZYDREN (CEO) -->
-                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-gold/40 hover:border-nv-gold transition-all duration-300 hover:shadow-2xl hover:shadow-nv-gold/20 overflow-hidden flex flex-col items-center text-center p-6">
-                    <div class="absolute top-4 right-4 bg-nv-gold/20 text-nv-gold border border-nv-gold/40 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-gold/40 hover:border-nv-gold transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(212,175,55,0.25)] overflow-hidden flex flex-col items-center text-center p-6 cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-b from-nv-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-nv-gold border border-nv-gold/50 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-[0_0_10px_rgba(212,175,55,0.3)] z-10">
                         Executive
                     </div>
-                    <div class="relative w-36 h-36 mb-4 rounded-full p-1 bg-gradient-to-tr from-nv-gold to-emerald-500 shadow-lg">
-                        <img src="zydren.png" alt="Zydren" class="w-full h-full object-cover rounded-full bg-nv-dark">
+                    <div class="relative w-36 h-36 mb-4 rounded-full p-1 bg-gradient-to-tr from-nv-gold to-yellow-200 shadow-[0_0_20px_rgba(212,175,55,0.4)] z-10 avatar-mask overflow-hidden">
+                        <img src="zydren.png" alt="Zydren" class="w-full h-full object-cover rounded-full bg-nv-dark transform transition-transform duration-500 group-hover:scale-110">
                     </div>
-                    <h4 class="text-2xl font-black text-white group-hover:text-nv-gold transition-colors">Zydren</h4>
-                    <p class="text-emerald-400 font-semibold text-sm tracking-wide mt-1">Chief Executive Officer (CEO)</p>
-                    <p class="text-xs text-gray-400 mt-3">Leading strategic direction, vision, and organizational growth for Solano.</p>
+                    <h4 class="text-2xl font-black text-white group-hover:text-nv-gold group-hover:[text-shadow:0_0_15px_rgba(212,175,55,0.8)] transition-all duration-300 z-10">Zydren</h4>
+                    <p class="text-emerald-400 font-semibold text-sm tracking-wide mt-1 z-10">Chief Executive Officer (CEO)</p>
+                    <p class="text-xs text-gray-400 mt-3 z-10 group-hover:text-gray-300 transition-colors">Leading strategic direction, vision, and organizational growth for Solano.</p>
                 </div>
 
                 <!-- CARLO D. (TEAM MANAGER) -->
-                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-lightgreen/50 hover:border-emerald-400 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/20 overflow-hidden flex flex-col items-center text-center p-6">
-                    <div class="absolute top-4 right-4 bg-emerald-950 text-emerald-400 border border-emerald-800/50 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-lightgreen/50 hover:border-emerald-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(52,211,153,0.2)] overflow-hidden flex flex-col items-center text-center p-6 cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-b from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-emerald-400 border border-emerald-500/50 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-[0_0_10px_rgba(52,211,153,0.3)] z-10">
                         Management
                     </div>
-                    <div class="relative w-36 h-36 mb-4 rounded-full p-1 bg-gradient-to-tr from-emerald-400 to-nv-lightgreen shadow-lg">
-                        <img src="carlo.png" alt="Carlo D." class="w-full h-full object-cover rounded-full bg-nv-dark">
+                    <div class="relative w-36 h-36 mb-4 rounded-full p-1 bg-gradient-to-tr from-emerald-400 to-nv-lightgreen shadow-[0_0_20px_rgba(52,211,153,0.3)] z-10 avatar-mask overflow-hidden">
+                        <img src="carlo.png" alt="Carlo D." class="w-full h-full object-cover rounded-full bg-nv-dark transform transition-transform duration-500 group-hover:scale-110">
                     </div>
-                    <h4 class="text-2xl font-black text-white group-hover:text-emerald-400 transition-colors">Carlo D.</h4>
-                    <p class="text-emerald-400 font-semibold text-sm tracking-wide mt-1">Team Manager</p>
-                    <p class="text-xs text-gray-400 mt-3">Overseeing team logistics, operations, and player development.</p>
+                    <h4 class="text-2xl font-black text-white group-hover:text-emerald-400 group-hover:[text-shadow:0_0_15px_rgba(52,211,153,0.8)] transition-all duration-300 z-10">Carlo D.</h4>
+                    <p class="text-emerald-400 font-semibold text-sm tracking-wide mt-1 z-10">Team Manager</p>
+                    <p class="text-xs text-gray-400 mt-3 z-10 group-hover:text-gray-300 transition-colors">Overseeing team logistics, operations, and player development.</p>
                 </div>
             </div>
         </div>
@@ -114,7 +122,7 @@
         <!-- PLAYER ROSTER SECTION -->
         <div>
             <div class="flex items-center space-x-3 mb-8 border-b border-nv-lightgreen/20 pb-4">
-                <i class="fa-solid fa-gamepad text-emerald-400 text-xl"></i>
+                <i class="fa-solid fa-gamepad text-emerald-400 text-xl drop-shadow-[0_0_8px_rgba(52,211,153,0.8)]"></i>
                 <h3 class="text-xl font-bold text-white tracking-wide uppercase">Active Roster</h3>
             </div>
 
@@ -122,75 +130,99 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <!-- 1. Shinji (Jungler) -->
-                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-gold/50 hover:border-nv-gold transition-all duration-300 hover:shadow-xl hover:shadow-nv-gold/20 overflow-hidden flex flex-col items-center text-center p-6">
-                    <div class="absolute top-4 right-4 bg-nv-gold/20 text-nv-gold border border-nv-gold/40 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-gold/50 hover:border-nv-gold transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_25px_rgba(212,175,55,0.25)] overflow-hidden flex flex-col items-center text-center p-6 cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-b from-nv-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <!-- NEW ROLE BADGE WITH ICON -->
+                    <div class="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-nv-gold border border-nv-gold/60 text-[10px] font-bold px-2 py-1 flex items-center gap-1.5 rounded-md uppercase tracking-wider shadow-[0_0_10px_rgba(212,175,55,0.4)] z-10">
+                        <img src="icon-jungler.png" alt="Jungler Icon" class="w-4 h-4 object-contain drop-shadow-[0_0_2px_rgba(212,175,55,1)]">
                         Jungler
                     </div>
-                    <div class="relative w-32 h-32 mb-4 rounded-full p-1 bg-gradient-to-tr from-nv-gold to-emerald-400 shadow-md">
-                        <img src="Messenger_creation_D11EF374-C2A6-44A4-A83B-6409C81E46F2.jpeg" alt="Shinji" class="w-full h-full object-cover rounded-full bg-nv-dark">
+
+                    <div class="relative w-32 h-32 mb-4 rounded-full p-1 bg-gradient-to-tr from-nv-gold to-yellow-300 shadow-[0_0_15px_rgba(212,175,55,0.3)] z-10 avatar-mask overflow-hidden">
+                        <img src="Messenger_creation_D11EF374-C2A6-44A4-A83B-6409C81E46F2.jpeg" alt="Shinji" class="w-full h-full object-cover rounded-full bg-nv-dark transform transition-transform duration-500 group-hover:scale-110">
                     </div>
-                    <h4 class="text-xl font-extrabold text-white group-hover:text-nv-gold transition-colors">Shinji</h4>
-                    <p class="text-nv-gold text-xs font-semibold tracking-wider uppercase mt-1">Jungler</p>
+                    <h4 class="text-xl font-extrabold text-white group-hover:text-nv-gold group-hover:[text-shadow:0_0_15px_rgba(212,175,55,0.8)] transition-all duration-300 z-10">Shinji</h4>
                 </div>
 
                 <!-- 2. Ashton (EXP Lane) -->
-                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-lightgreen/30 hover:border-emerald-500/80 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-900/30 overflow-hidden flex flex-col items-center text-center p-6">
-                    <div class="absolute top-4 right-4 bg-emerald-950 text-emerald-400 border border-emerald-800/50 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-lightgreen/30 hover:border-emerald-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_25px_rgba(52,211,153,0.2)] overflow-hidden flex flex-col items-center text-center p-6 cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-b from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <!-- NEW ROLE BADGE WITH ICON -->
+                    <div class="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white border border-emerald-500/60 text-[10px] font-bold px-2 py-1 flex items-center gap-1.5 rounded-md uppercase tracking-wider shadow-[0_0_10px_rgba(52,211,153,0.3)] z-10">
+                        <img src="icon-exp.png" alt="EXP Lane Icon" class="w-4 h-4 object-contain drop-shadow-[0_0_2px_rgba(255,255,255,1)]">
                         EXP Lane
                     </div>
-                    <div class="relative w-32 h-32 mb-4 rounded-full p-1 bg-gradient-to-tr from-nv-lightgreen to-emerald-400 shadow-md">
-                        <img src="Screenshot_2026-07-31-16-38-12-654_com.facebook.katana-edit.jpg" alt="Ashton" class="w-full h-full object-cover rounded-full bg-nv-dark">
+
+                    <div class="relative w-32 h-32 mb-4 rounded-full p-1 bg-gradient-to-tr from-nv-lightgreen to-emerald-400 shadow-[0_0_15px_rgba(52,211,153,0.2)] z-10 avatar-mask overflow-hidden">
+                        <img src="Screenshot_2026-07-31-16-38-12-654_com.facebook.katana-edit.jpg" alt="Ashton" class="w-full h-full object-cover rounded-full bg-nv-dark transform transition-transform duration-500 group-hover:scale-110">
                     </div>
-                    <h4 class="text-xl font-extrabold text-white group-hover:text-emerald-400 transition-colors">Ashton</h4>
-                    <p class="text-emerald-400/80 text-xs font-semibold tracking-wider uppercase mt-1">EXP Lane</p>
+                    <h4 class="text-xl font-extrabold text-white group-hover:text-emerald-400 group-hover:[text-shadow:0_0_15px_rgba(52,211,153,0.8)] transition-all duration-300 z-10">Ashton</h4>
                 </div>
 
                 <!-- 3. Shone (Mid Lane) -->
-                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-lightgreen/30 hover:border-emerald-500/80 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-900/30 overflow-hidden flex flex-col items-center text-center p-6">
-                    <div class="absolute top-4 right-4 bg-emerald-950 text-emerald-400 border border-emerald-800/50 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-lightgreen/30 hover:border-emerald-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_25px_rgba(52,211,153,0.2)] overflow-hidden flex flex-col items-center text-center p-6 cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-b from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <!-- NEW ROLE BADGE WITH ICON -->
+                    <div class="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white border border-emerald-500/60 text-[10px] font-bold px-2 py-1 flex items-center gap-1.5 rounded-md uppercase tracking-wider shadow-[0_0_10px_rgba(52,211,153,0.3)] z-10">
+                        <img src="icon-mid.png" alt="Mid Lane Icon" class="w-4 h-4 object-contain drop-shadow-[0_0_2px_rgba(255,255,255,1)]">
                         Mid Lane
                     </div>
-                    <div class="relative w-32 h-32 mb-4 rounded-full p-1 bg-gradient-to-tr from-nv-lightgreen to-emerald-400 shadow-md">
-                        <img src="shone.jpg" alt="Shone" class="w-full h-full object-cover rounded-full bg-nv-dark">
+
+                    <div class="relative w-32 h-32 mb-4 rounded-full p-1 bg-gradient-to-tr from-nv-lightgreen to-emerald-400 shadow-[0_0_15px_rgba(52,211,153,0.2)] z-10 avatar-mask overflow-hidden">
+                        <img src="shone.jpg" alt="Shone" class="w-full h-full object-cover rounded-full bg-nv-dark transform transition-transform duration-500 group-hover:scale-110">
                     </div>
-                    <h4 class="text-xl font-extrabold text-white group-hover:text-emerald-400 transition-colors">Shone</h4>
-                    <p class="text-emerald-400/80 text-xs font-semibold tracking-wider uppercase mt-1">Mid Lane</p>
+                    <h4 class="text-xl font-extrabold text-white group-hover:text-emerald-400 group-hover:[text-shadow:0_0_15px_rgba(52,211,153,0.8)] transition-all duration-300 z-10">Shone</h4>
                 </div>
 
                 <!-- 4. Richmond (Gold Lane) -->
-                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-lightgreen/30 hover:border-emerald-500/80 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-900/30 overflow-hidden flex flex-col items-center text-center p-6">
-                    <div class="absolute top-4 right-4 bg-emerald-950 text-emerald-400 border border-emerald-800/50 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-lightgreen/30 hover:border-emerald-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_25px_rgba(52,211,153,0.2)] overflow-hidden flex flex-col items-center text-center p-6 cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-b from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <!-- NEW ROLE BADGE WITH ICON -->
+                    <div class="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white border border-emerald-500/60 text-[10px] font-bold px-2 py-1 flex items-center gap-1.5 rounded-md uppercase tracking-wider shadow-[0_0_10px_rgba(52,211,153,0.3)] z-10">
+                        <img src="icon-gold.png" alt="Gold Lane Icon" class="w-4 h-4 object-contain drop-shadow-[0_0_2px_rgba(255,255,255,1)]">
                         Gold Lane
                     </div>
-                    <div class="relative w-32 h-32 mb-4 rounded-full p-1 bg-gradient-to-tr from-nv-lightgreen to-emerald-400 shadow-md">
-                        <img src="Screenshot_2026-07-31-16-38-53-117_com.facebook.katana-edit.jpg" alt="Richmond" class="w-full h-full object-cover rounded-full bg-nv-dark">
+
+                    <div class="relative w-32 h-32 mb-4 rounded-full p-1 bg-gradient-to-tr from-nv-lightgreen to-emerald-400 shadow-[0_0_15px_rgba(52,211,153,0.2)] z-10 avatar-mask overflow-hidden">
+                        <img src="Screenshot_2026-07-31-16-38-53-117_com.facebook.katana-edit.jpg" alt="Richmond" class="w-full h-full object-cover rounded-full bg-nv-dark transform transition-transform duration-500 group-hover:scale-110">
                     </div>
-                    <h4 class="text-xl font-extrabold text-white group-hover:text-emerald-400 transition-colors">Richmond</h4>
-                    <p class="text-emerald-400/80 text-xs font-semibold tracking-wider uppercase mt-1">Gold Lane</p>
+                    <h4 class="text-xl font-extrabold text-white group-hover:text-emerald-400 group-hover:[text-shadow:0_0_15px_rgba(52,211,153,0.8)] transition-all duration-300 z-10">Richmond</h4>
                 </div>
 
-                <!-- 5. Mark (Roamer) -->
-                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-lightgreen/30 hover:border-emerald-500/80 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-900/30 overflow-hidden flex flex-col items-center text-center p-6">
-                    <div class="absolute top-4 right-4 bg-emerald-950 text-emerald-400 border border-emerald-800/50 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                        Roamer
+                <!-- 5. Mark (Roaming) -->
+                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-lightgreen/30 hover:border-emerald-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_25px_rgba(52,211,153,0.2)] overflow-hidden flex flex-col items-center text-center p-6 cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-b from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <!-- NEW ROLE BADGE WITH ICON (Updated to match 'Roaming' image) -->
+                    <div class="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white border border-emerald-500/60 text-[10px] font-bold px-2 py-1 flex items-center gap-1.5 rounded-md uppercase tracking-wider shadow-[0_0_10px_rgba(52,211,153,0.3)] z-10">
+                        <img src="icon-roam.png" alt="Roaming Icon" class="w-4 h-4 object-contain drop-shadow-[0_0_2px_rgba(255,255,255,1)]">
+                        Roaming
                     </div>
-                    <div class="relative w-32 h-32 mb-4 rounded-full p-1 bg-gradient-to-tr from-nv-lightgreen to-emerald-400 shadow-md">
-                        <img src="mark.jpg" alt="Mark" class="w-full h-full object-cover rounded-full bg-nv-dark">
+
+                    <div class="relative w-32 h-32 mb-4 rounded-full p-1 bg-gradient-to-tr from-nv-lightgreen to-emerald-400 shadow-[0_0_15px_rgba(52,211,153,0.2)] z-10 avatar-mask overflow-hidden">
+                        <img src="mark.jpg" alt="Mark" class="w-full h-full object-cover rounded-full bg-nv-dark transform transition-transform duration-500 group-hover:scale-110">
                     </div>
-                    <h4 class="text-xl font-extrabold text-white group-hover:text-emerald-400 transition-colors">Mark</h4>
-                    <p class="text-emerald-400/80 text-xs font-semibold tracking-wider uppercase mt-1">Roamer</p>
+                    <h4 class="text-xl font-extrabold text-white group-hover:text-emerald-400 group-hover:[text-shadow:0_0_15px_rgba(52,211,153,0.8)] transition-all duration-300 z-10">Mark</h4>
                 </div>
 
                 <!-- 6. Jomie Rae (6th Man) -->
-                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-lightgreen/30 hover:border-emerald-500/80 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-900/30 overflow-hidden flex flex-col items-center text-center p-6">
-                    <div class="absolute top-4 right-4 bg-emerald-950/80 text-emerald-400 border border-emerald-800/50 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                <div class="group relative rounded-2xl bg-gradient-to-b from-nv-card to-nv-dark border border-nv-lightgreen/30 hover:border-emerald-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_25px_rgba(52,211,153,0.2)] overflow-hidden flex flex-col items-center text-center p-6 cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-b from-emerald-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <!-- 6th Man Backup FontAwesome Icon (Since not in MLBB image) -->
+                    <div class="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white border border-emerald-500/60 text-[10px] font-bold px-2 py-1 flex items-center gap-1.5 rounded-md uppercase tracking-wider shadow-[0_0_10px_rgba(52,211,153,0.3)] z-10">
+                        <i class="fa-solid fa-user-plus text-emerald-400 drop-shadow-[0_0_2px_rgba(52,211,153,1)]"></i>
                         6th Man
                     </div>
-                    <div class="relative w-32 h-32 mb-4 rounded-full p-1 bg-gradient-to-tr from-nv-lightgreen to-emerald-400 shadow-md">
-                        <img src="Screenshot_2026-07-31-16-38-29-924_com.facebook.katana-edit.jpg" alt="Jomie Rae" class="w-full h-full object-cover rounded-full bg-nv-dark">
+
+                    <div class="relative w-32 h-32 mb-4 rounded-full p-1 bg-gradient-to-tr from-nv-lightgreen to-emerald-400 shadow-[0_0_15px_rgba(52,211,153,0.2)] z-10 avatar-mask overflow-hidden">
+                        <img src="Screenshot_2026-07-31-16-38-29-924_com.facebook.katana-edit.jpg" alt="Jomie Rae" class="w-full h-full object-cover rounded-full bg-nv-dark transform transition-transform duration-500 group-hover:scale-110">
                     </div>
-                    <h4 class="text-xl font-extrabold text-white group-hover:text-emerald-400 transition-colors">Jomie Rae</h4>
-                    <p class="text-emerald-400/80 text-xs font-semibold tracking-wider uppercase mt-1">6th Man</p>
+                    <h4 class="text-xl font-extrabold text-white group-hover:text-emerald-400 group-hover:[text-shadow:0_0_15px_rgba(52,211,153,0.8)] transition-all duration-300 z-10">Jomie Rae</h4>
                 </div>
 
             </div>
@@ -198,7 +230,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-nv-lightgreen/20 bg-nv-dark/90 py-6 mt-12 text-center text-xs text-emerald-200/50">
+    <footer class="border-t border-nv-lightgreen/20 bg-nv-dark/90 py-6 mt-12 text-center text-xs text-emerald-200/50 relative z-10">
         <p>&copy; Solano Team Roster • Nueva Vizcaya</p>
     </footer>
 
