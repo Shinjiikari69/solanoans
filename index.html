@@ -3,105 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solano Squad Roster | Nueva Vizcaya</title>
+    <title>Solano Squad Roster</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: { 
-                extend: { 
-                    colors: { 
-                        solano: {
-                            blue: '#002855', // Deep Royal Blue
-                            accent: '#00509d', // Lighter Blue
-                            yellow: '#ffcc00'  // Signature Yellow
-                        } 
-                    } 
-                } 
-            }
-        }
-    </script>
     <style>
-        body { background-color: #001220; }
+        body { background-color: #000c19; color: white; }
         .bg-logo-blur {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-image: url('logo.jpg');
             background-size: cover; background-position: center;
-            filter: blur(25px) brightness(0.15);
-            z-index: -1; opacity: 0.5;
+            filter: blur(30px) brightness(0.1);
+            z-index: -1;
         }
     </style>
 </head>
-<body class="text-white font-sans min-h-screen">
+<body class="font-sans pb-10">
     <div class="bg-logo-blur"></div>
 
-    <header class="border-b border-solano-yellow/30 bg-solano-blue/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <img src="logo.jpg" alt="Logo" class="w-10 h-10 rounded-full border-2 border-solano-yellow">
-                <div>
-                    <h1 class="text-lg font-black tracking-widest text-white">SOLANO</h1>
-                    <p class="text-[10px] text-solano-yellow font-bold uppercase">Nueva Vizcaya Representatives</p>
-                </div>
-            </div>
-            <span class="px-3 py-1 rounded-full text-[9px] font-black bg-solano-yellow text-solano-blue uppercase">Active</span>
-        </div>
+    <!-- Header -->
+    <header class="p-6 text-center border-b border-yellow-500/20">
+        <h1 class="text-3xl font-black italic tracking-tighter text-white">SOLANO <span class="text-yellow-400">SQUAD</span></h1>
+        <p class="text-[10px] text-yellow-500 font-bold tracking-widest uppercase">Nueva Vizcaya Representatives</p>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 py-10">
-        <h2 class="text-4xl font-black text-center mb-10 italic">MEET THE <span class="text-solano-yellow">SQUAD</span></h2>
-
-        <!-- Coaches -->
-        <div class="grid grid-cols-2 gap-4 mb-12">
-            <div class="bg-solano-blue/50 border border-solano-yellow/50 p-4 rounded-xl text-center">
-                <img src="zydren.png" class="w-20 h-20 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
-                <h4 class="font-bold text-sm">Zydren</h4>
-                <p class="text-[9px] text-solano-yellow font-bold uppercase">Head Coach</p>
+    <main class="max-w-md mx-auto px-4 mt-6">
+        
+        <!-- Coaches Section -->
+        <h3 class="text-xs font-bold text-yellow-500 uppercase mb-4 tracking-widest text-center">Coaching Staff</h3>
+        <div class="grid grid-cols-2 gap-4 mb-10">
+            <div class="bg-blue-900/40 border border-yellow-500/50 p-4 rounded-2xl text-center">
+                <img src="zydren.png" class="w-24 h-24 rounded-full mx-auto mb-3 border-4 border-yellow-400">
+                <h4 class="font-bold text-lg">Zydren</h4>
+                <p class="text-[10px] text-yellow-400 uppercase font-bold">Head Coach</p>
             </div>
-            <div class="bg-solano-blue/50 border border-solano-yellow/50 p-4 rounded-xl text-center">
-                <img src="carlo.jpg" class="w-20 h-20 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
-                <h4 class="font-bold text-sm">Carlo D.</h4>
-                <p class="text-[9px] text-solano-yellow font-bold uppercase">Manager</p>
+            <div class="bg-blue-900/40 border border-yellow-500/50 p-4 rounded-2xl text-center">
+                <img src="carlo.jpg" class="w-24 h-24 rounded-full mx-auto mb-3 border-4 border-yellow-400">
+                <h4 class="font-bold text-lg">Carlo D.</h4>
+                <p class="text-[10px] text-yellow-400 uppercase font-bold">Manager</p>
             </div>
         </div>
 
-        <!-- Roster -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            <!-- Player Cards -->
-            <div class="bg-solano-blue/50 p-3 rounded-lg border border-solano-accent text-center">
-                <img src="shinji.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
-                <h4 class="font-bold text-xs">Shinji</h4>
-                <p class="text-[9px] text-solano-yellow uppercase">Jungler</p>
+        <!-- Roster Section -->
+        <h3 class="text-xs font-bold text-yellow-500 uppercase mb-4 tracking-widest text-center">Active Roster</h3>
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Player Card Template: Ginawa nating mas malaki -->
+            <div class="bg-blue-950/60 p-5 rounded-2xl border border-blue-800 text-center shadow-lg">
+                <img src="shinji.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-yellow-500">
+                <h4 class="font-bold text-md">Shinji</h4>
+                <p class="text-[10px] text-yellow-400 uppercase font-bold">Jungler</p>
             </div>
-            <div class="bg-solano-blue/50 p-3 rounded-lg border border-solano-accent text-center">
-                <img src="jassel.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
-                <h4 class="font-bold text-xs">Jassel</h4>
-                <p class="text-[9px] text-solano-yellow uppercase">Roamer</p>
+            <div class="bg-blue-950/60 p-5 rounded-2xl border border-blue-800 text-center shadow-lg">
+                <img src="jassel.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-yellow-500">
+                <h4 class="font-bold text-md">Jassel</h4>
+                <p class="text-[10px] text-yellow-400 uppercase font-bold">Roamer</p>
             </div>
-            <div class="bg-solano-blue/50 p-3 rounded-lg border border-solano-accent text-center">
-                <img src="dags.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
-                <h4 class="font-bold text-xs">Dags</h4>
-                <p class="text-[9px] text-solano-yellow uppercase">EXP Lane</p>
+            <div class="bg-blue-950/60 p-5 rounded-2xl border border-blue-800 text-center shadow-lg">
+                <img src="dags.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-yellow-500">
+                <h4 class="font-bold text-md">Dags</h4>
+                <p class="text-[10px] text-yellow-400 uppercase font-bold">EXP Lane</p>
             </div>
-            <div class="bg-solano-blue/50 p-3 rounded-lg border border-solano-accent text-center">
-                <img src="allen.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
-                <h4 class="font-bold text-xs">Allen</h4>
-                <p class="text-[9px] text-solano-yellow uppercase">Mid Lane</p>
+            <div class="bg-blue-950/60 p-5 rounded-2xl border border-blue-800 text-center shadow-lg">
+                <img src="allen.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-yellow-500">
+                <h4 class="font-bold text-md">Allen</h4>
+                <p class="text-[10px] text-yellow-400 uppercase font-bold">Mid Lane</p>
             </div>
-            <div class="bg-solano-blue/50 p-3 rounded-lg border border-solano-accent text-center">
-                <img src="umali.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
-                <h4 class="font-bold text-xs">Umali</h4>
-                <p class="text-[9px] text-solano-yellow uppercase">EXP Lane</p>
+            <div class="bg-blue-950/60 p-5 rounded-2xl border border-blue-800 text-center shadow-lg">
+                <img src="umali.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-yellow-500">
+                <h4 class="font-bold text-md">Umali</h4>
+                <p class="text-[10px] text-yellow-400 uppercase font-bold">EXP Lane</p>
             </div>
-            <div class="bg-solano-blue/50 p-3 rounded-lg border border-solano-accent text-center">
-                <img src="benter.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
-                <h4 class="font-bold text-xs">Benter</h4>
-                <p class="text-[9px] text-solano-yellow uppercase">Gold Lane</p>
+            <div class="bg-blue-950/60 p-5 rounded-2xl border border-blue-800 text-center shadow-lg">
+                <img src="benter.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-yellow-500">
+                <h4 class="font-bold text-md">Benter</h4>
+                <p class="text-[10px] text-yellow-400 uppercase font-bold">Gold Lane</p>
             </div>
-            <div class="bg-solano-blue/50 p-3 rounded-lg border border-solano-accent text-center">
-                <img src="jomie.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
-                <h4 class="font-bold text-xs">Jomie Rae</h4>
-                <p class="text-[9px] text-solano-yellow uppercase">6th Man</p>
+            <div class="bg-blue-950/60 p-5 rounded-2xl border border-blue-800 text-center shadow-lg col-span-2">
+                <img src="jomie.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-yellow-500">
+                <h4 class="font-bold text-md">Jomie Rae</h4>
+                <p class="text-[10px] text-yellow-400 uppercase font-bold">6th Man</p>
             </div>
         </div>
     </main>
