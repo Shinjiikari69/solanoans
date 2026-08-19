@@ -3,83 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solano Squad Roster</title>
+    <title>Solano Squad | Governor's Cup</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #000c19; color: white; }
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+        body { background-color: #001229; font-family: 'Montserrat', sans-serif; }
+        
+        /* Background Logo Blur */
         .bg-logo-blur {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-image: url('logo.jpg');
             background-size: cover; background-position: center;
-            filter: blur(30px) brightness(0.1);
+            filter: blur(40px) brightness(0.05);
             z-index: -1;
+        }
+
+        /* Animated Active Button */
+        .status-pill {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(255, 204, 0, 0); }
         }
     </style>
 </head>
-<body class="font-sans pb-10">
+<body class="text-white pb-20">
     <div class="bg-logo-blur"></div>
 
     <!-- Header -->
-    <header class="p-6 text-center border-b border-yellow-500/20">
-        <h1 class="text-3xl font-black italic tracking-tighter text-white">SOLANO <span class="text-yellow-400">SQUAD</span></h1>
-        <p class="text-[10px] text-yellow-500 font-bold tracking-widest uppercase">Nueva Vizcaya Representatives</p>
+    <header class="p-5 flex justify-between items-center border-b border-yellow-500/20 bg-blue-900/30 backdrop-blur-sm">
+        <div>
+            <h1 class="font-black text-xl">SOLANO</h1>
+            <p class="text-[9px] text-yellow-400 font-bold uppercase tracking-widest">Governor's Cup Edition</p>
+        </div>
+        <div class="flex items-center gap-2 bg-blue-950 px-3 py-1 rounded-full border border-yellow-500/30 status-pill">
+            <div class="w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
+            <span class="text-[10px] font-bold text-yellow-400 uppercase">Active Roster</span>
+        </div>
     </header>
 
-    <main class="max-w-md mx-auto px-4 mt-6">
+    <main class="max-w-md mx-auto px-4 mt-8">
         
-        <!-- Coaches Section -->
-        <h3 class="text-xs font-bold text-yellow-500 uppercase mb-4 tracking-widest text-center">Coaching Staff</h3>
-        <div class="grid grid-cols-2 gap-4 mb-10">
-            <div class="bg-blue-900/40 border border-yellow-500/50 p-4 rounded-2xl text-center">
-                <img src="zydren.png" class="w-24 h-24 rounded-full mx-auto mb-3 border-4 border-yellow-400">
-                <h4 class="font-bold text-lg">Zydren</h4>
-                <p class="text-[10px] text-yellow-400 uppercase font-bold">Head Coach</p>
+        <!-- Hero Section -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-black italic uppercase leading-none">Meet the <br><span class="text-yellow-400">Representatives</span></h2>
+            <p class="text-blue-200 text-[11px] mt-4 uppercase tracking-widest opacity-80">Forged in Solano, Competing for Glory.</p>
+        </div>
+
+        <!-- Coaches -->
+        <div class="grid grid-cols-2 gap-4 mb-12">
+            <div class="bg-gradient-to-b from-blue-800/50 to-blue-950/50 p-4 rounded-2xl border border-yellow-500/30 text-center">
+                <img src="zydren.png" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-400">
+                <h4 class="font-bold">Zydren</h4>
+                <p class="text-[9px] text-yellow-400 font-bold uppercase">Head Coach</p>
             </div>
-            <div class="bg-blue-900/40 border border-yellow-500/50 p-4 rounded-2xl text-center">
-                <img src="carlo.jpg" class="w-24 h-24 rounded-full mx-auto mb-3 border-4 border-yellow-400">
-                <h4 class="font-bold text-lg">Carlo D.</h4>
-                <p class="text-[10px] text-yellow-400 uppercase font-bold">Manager</p>
+            <div class="bg-gradient-to-b from-blue-800/50 to-blue-950/50 p-4 rounded-2xl border border-yellow-500/30 text-center">
+                <img src="carlo.jpg" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-400">
+                <h4 class="font-bold">Carlo D.</h4>
+                <p class="text-[9px] text-yellow-400 font-bold uppercase">Team Manager</p>
             </div>
         </div>
 
-        <!-- Roster Section -->
-        <h3 class="text-xs font-bold text-yellow-500 uppercase mb-4 tracking-widest text-center">Active Roster</h3>
+        <!-- Roster -->
         <div class="grid grid-cols-2 gap-4">
-            <!-- Player Card Template: Ginawa nating mas malaki -->
-            <div class="bg-blue-950/60 p-5 rounded-2xl border border-blue-800 text-center shadow-lg">
-                <img src="shinji.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-yellow-500">
-                <h4 class="font-bold text-md">Shinji</h4>
-                <p class="text-[10px] text-yellow-400 uppercase font-bold">Jungler</p>
+            <!-- Player Cards -->
+            <div class="bg-blue-900/40 p-4 rounded-2xl border border-blue-700 text-center shadow-2xl">
+                <img src="shinji.jpg" class="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-yellow-500">
+                <h4 class="font-bold text-sm">Shinji</h4>
+                <p class="text-[9px] text-yellow-400 uppercase">Jungler</p>
             </div>
-            <div class="bg-blue-950/60 p-5 rounded-2xl border border-blue-800 text-center shadow-lg">
-                <img src="jassel.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-yellow-500">
-                <h4 class="font-bold text-md">Jassel</h4>
-                <p class="text-[10px] text-yellow-400 uppercase font-bold">Roamer</p>
+            <div class="bg-blue-900/40 p-4 rounded-2xl border border-blue-700 text-center shadow-2xl">
+                <img src="jassel.jpg" class="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-yellow-500">
+                <h4 class="font-bold text-sm">Jassel</h4>
+                <p class="text-[9px] text-yellow-400 uppercase">Roamer</p>
             </div>
-            <div class="bg-blue-950/60 p-5 rounded-2xl border border-blue-800 text-center shadow-lg">
-                <img src="dags.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-yellow-500">
-                <h4 class="font-bold text-md">Dags</h4>
-                <p class="text-[10px] text-yellow-400 uppercase font-bold">EXP Lane</p>
+            <div class="bg-blue-900/40 p-4 rounded-2xl border border-blue-700 text-center shadow-2xl">
+                <img src="dags.jpg" class="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-yellow-500">
+                <h4 class="font-bold text-sm">Dags</h4>
+                <p class="text-[9px] text-yellow-400 uppercase">EXP Lane</p>
             </div>
-            <div class="bg-blue-950/60 p-5 rounded-2xl border border-blue-800 text-center shadow-lg">
-                <img src="allen.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-yellow-500">
-                <h4 class="font-bold text-md">Allen</h4>
-                <p class="text-[10px] text-yellow-400 uppercase font-bold">Mid Lane</p>
+            <div class="bg-blue-900/40 p-4 rounded-2xl border border-blue-700 text-center shadow-2xl">
+                <img src="allen.jpg" class="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-yellow-500">
+                <h4 class="font-bold text-sm">Allen</h4>
+                <p class="text-[9px] text-yellow-400 uppercase">Mid Lane</p>
             </div>
-            <div class="bg-blue-950/60 p-5 rounded-2xl border border-blue-800 text-center shadow-lg">
-                <img src="umali.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-yellow-500">
-                <h4 class="font-bold text-md">Umali</h4>
-                <p class="text-[10px] text-yellow-400 uppercase font-bold">EXP Lane</p>
+            <div class="bg-blue-900/40 p-4 rounded-2xl border border-blue-700 text-center shadow-2xl">
+                <img src="umali.jpg" class="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-yellow-500">
+                <h4 class="font-bold text-sm">Umali</h4>
+                <p class="text-[9px] text-yellow-400 uppercase">EXP Lane</p>
             </div>
-            <div class="bg-blue-950/60 p-5 rounded-2xl border border-blue-800 text-center shadow-lg">
-                <img src="benter.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-yellow-500">
-                <h4 class="font-bold text-md">Benter</h4>
-                <p class="text-[10px] text-yellow-400 uppercase font-bold">Gold Lane</p>
+            <div class="bg-blue-900/40 p-4 rounded-2xl border border-blue-700 text-center shadow-2xl">
+                <img src="benter.jpg" class="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-yellow-500">
+                <h4 class="font-bold text-sm">Benter</h4>
+                <p class="text-[9px] text-yellow-400 uppercase">Gold Lane</p>
             </div>
-            <div class="bg-blue-950/60 p-5 rounded-2xl border border-blue-800 text-center shadow-lg col-span-2">
-                <img src="jomie.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-yellow-500">
-                <h4 class="font-bold text-md">Jomie Rae</h4>
-                <p class="text-[10px] text-yellow-400 uppercase font-bold">6th Man</p>
+            <div class="col-span-2 bg-blue-900/40 p-4 rounded-2xl border border-blue-700 text-center shadow-2xl">
+                <img src="jomie.jpg" class="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-yellow-500">
+                <h4 class="font-bold text-sm">Jomie Rae</h4>
+                <p class="text-[9px] text-yellow-400 uppercase">6th Man</p>
             </div>
         </div>
     </main>
