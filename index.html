@@ -7,10 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Teko:wght@600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,800;0,900;1,900&display=swap');
         
         body { background-color: #001020; font-family: 'Montserrat', sans-serif; }
-        .esports-font { font-family: 'Teko', sans-serif; letter-spacing: 1px; }
 
         /* Background Logo Blur */
         .bg-logo-blur {
@@ -30,7 +29,6 @@
             50% { box-shadow: 0 0 0 10px rgba(255, 204, 0, 0); }
         }
 
-        /* Subtle float/glow animations for section headers */
         @keyframes bounce-slow {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-3px); }
@@ -46,13 +44,13 @@
         <div class="flex items-center space-x-3">
             <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-full border-2 border-yellow-400 object-cover shadow-md">
             <div>
-                <h1 class="font-black text-lg tracking-wider esports-font text-yellow-400 leading-none">SOLANO</h1>
+                <h1 class="font-black text-lg tracking-wider text-yellow-400 leading-none">SOLANO</h1>
                 <p class="text-[9px] text-blue-200 font-bold uppercase tracking-widest">Solano Representatives</p>
             </div>
         </div>
         <div class="flex items-center gap-2 bg-blue-900/80 px-3 py-1.5 rounded-full border border-yellow-500/30 status-pill">
             <div class="w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
-            <span class="text-[10px] font-black text-yellow-400 uppercase tracking-wider esports-font text-sm">Active Roster</span>
+            <span class="text-[10px] font-extrabold text-yellow-400 uppercase tracking-wider">Active Roster</span>
         </div>
     </header>
 
@@ -60,78 +58,78 @@
         
         <!-- Hero Section -->
         <div class="text-center mb-10">
-            <h2 class="text-5xl font-black italic uppercase leading-none esports-font tracking-wide">Meet the <br><span class="text-yellow-400">Representatives</span></h2>
+            <h2 class="text-4xl font-black italic uppercase tracking-tight leading-tight">Meet the <br><span class="text-yellow-400">Representatives</span></h2>
             <p class="text-blue-300 text-[10px] mt-2 uppercase tracking-widest opacity-80 font-bold">Official Esports Lineup</p>
         </div>
 
         <!-- Coaching Staff -->
         <div class="flex items-center justify-center gap-2 mb-4">
             <i class="fa-solid fa-crown text-yellow-400 text-sm anim-icon"></i>
-            <h3 class="text-sm font-bold text-yellow-400 uppercase tracking-widest esports-font text-xl">Coaching & Management</h3>
+            <h3 class="text-sm font-extrabold text-yellow-400 uppercase tracking-wider">Coaching & Management</h3>
             <i class="fa-solid fa-crown text-yellow-400 text-sm anim-icon"></i>
         </div>
         
         <div class="grid grid-cols-2 gap-4 mb-10">
             <div class="bg-gradient-to-b from-blue-900/60 to-blue-950/90 p-5 rounded-2xl border border-yellow-500/40 text-center shadow-xl">
                 <img src="zydren.png" class="w-24 h-24 rounded-full mx-auto mb-3 border-4 border-yellow-400 object-cover shadow-md">
-                <h4 class="font-black text-xl esports-font text-white leading-none">Zydren</h4>
-                <p class="text-[11px] text-yellow-400 font-bold uppercase tracking-wider esports-font mt-1">Head Coach</p>
+                <h4 class="font-extrabold text-base text-white">Zydren</h4>
+                <p class="text-[10px] text-yellow-400 font-bold uppercase tracking-wider mt-1">Head Coach</p>
             </div>
             <div class="bg-gradient-to-b from-blue-900/60 to-blue-950/90 p-5 rounded-2xl border border-yellow-500/40 text-center shadow-xl">
                 <img src="carlo.jpg" class="w-24 h-24 rounded-full mx-auto mb-3 border-4 border-yellow-400 object-cover shadow-md">
-                <h4 class="font-black text-xl esports-font text-white leading-none">Carlo D.</h4>
-                <p class="text-[11px] text-yellow-400 font-bold uppercase tracking-wider esports-font mt-1">Team Manager</p>
+                <h4 class="font-extrabold text-base text-white">Carlo D.</h4>
+                <p class="text-[10px] text-yellow-400 font-bold uppercase tracking-wider mt-1">Team Manager</p>
             </div>
         </div>
 
         <!-- Active Roster -->
         <div class="flex items-center justify-center gap-2 mb-4">
             <i class="fa-solid fa-bolt text-yellow-400 text-sm anim-icon"></i>
-            <h3 class="text-sm font-bold text-yellow-400 uppercase tracking-widest esports-font text-xl">Active Lineup</h3>
+            <h3 class="text-sm font-extrabold text-yellow-400 uppercase tracking-wider">Active Lineup</h3>
             <i class="fa-solid fa-bolt text-yellow-400 text-sm anim-icon"></i>
         </div>
 
         <div class="grid grid-cols-2 gap-4">
-            <div class="bg-blue-950/50 p-4 rounded-2xl border border-blue-800/80 text-center shadow-lg hover:border-yellow-500/50 transition">
+            <div class="bg-blue-950/50 p-4 rounded-2xl border border-blue-800/80 text-center shadow-lg">
                 <img src="shinji.jpg" class="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-yellow-400 object-cover">
-                <h4 class="font-bold text-lg esports-font text-white leading-none">Shinji</h4>
-                <p class="text-[10px] text-yellow-400 uppercase tracking-wider esports-font mt-0.5">Jungler</p>
+                <h4 class="font-bold text-sm text-white">Shinji</h4>
+                <p class="text-[9px] text-yellow-400 uppercase tracking-wider font-semibold mt-0.5">Jungler</p>
             </div>
-            <div class="bg-blue-950/50 p-4 rounded-2xl border border-blue-800/80 text-center shadow-lg hover:border-yellow-500/50 transition">
+            <div class="bg-blue-950/50 p-4 rounded-2xl border border-blue-800/80 text-center shadow-lg">
                 <img src="jassel.jpg" class="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-yellow-400 object-cover">
-                <h4 class="font-bold text-lg esports-font text-white leading-none">Jassel</h4>
-                <p class="text-[10px] text-yellow-400 uppercase tracking-wider esports-font mt-0.5">Roamer</p>
+                <h4 class="font-bold text-sm text-white">Jassel</h4>
+                <p class="text-[9px] text-yellow-400 uppercase tracking-wider font-semibold mt-0.5">Roamer</p>
             </div>
-            <div class="bg-blue-950/50 p-4 rounded-2xl border border-blue-800/80 text-center shadow-lg hover:border-yellow-500/50 transition">
+            <div class="bg-blue-950/50 p-4 rounded-2xl border border-blue-800/80 text-center shadow-lg">
                 <img src="dags.jpg" class="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-yellow-400 object-cover">
-                <h4 class="font-bold text-lg esports-font text-white leading-none">Dags</h4>
-                <p class="text-[10px] text-yellow-400 uppercase tracking-wider esports-font mt-0.5">EXP Lane</p>
+                <h4 class="font-bold text-sm text-white">Dags</h4>
+                <p class="text-[9px] text-yellow-400 uppercase tracking-wider font-semibold mt-0.5">EXP Lane</p>
             </div>
-            <div class="bg-blue-950/50 p-4 rounded-2xl border border-blue-800/80 text-center shadow-lg hover:border-yellow-500/50 transition">
+            <div class="bg-blue-950/50 p-4 rounded-2xl border border-blue-800/80 text-center shadow-lg">
                 <img src="allen.jpg" class="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-yellow-400 object-cover">
-                <h4 class="font-bold text-lg esports-font text-white leading-none">Allen</h4>
-                <p class="text-[10px] text-yellow-400 uppercase tracking-wider esports-font mt-0.5">Mid Lane</p>
+                <h4 class="font-bold text-sm text-white">Allen</h4>
+                <p class="text-[9px] text-yellow-400 uppercase tracking-wider font-semibold mt-0.5">Mid Lane</p>
             </div>
-            <div class="bg-blue-950/50 p-4 rounded-2xl border border-blue-800/80 text-center shadow-lg hover:border-yellow-500/50 transition">
+            <div class="bg-blue-950/50 p-4 rounded-2xl border border-blue-800/80 text-center shadow-lg">
                 <img src="umali.jpg" class="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-yellow-400 object-cover">
-                <h4 class="font-bold text-lg esports-font text-white leading-none">Umali</h4>
-                <p class="text-[10px] text-yellow-400 uppercase tracking-wider esports-font mt-0.5">EXP Lane</p>
+                <h4 class="font-bold text-sm text-white">Umali</h4>
+                <p class="text-[9px] text-yellow-400 uppercase tracking-wider font-semibold mt-0.5">EXP Lane</p>
             </div>
-            <div class="bg-blue-950/50 p-4 rounded-2xl border border-blue-800/80 text-center shadow-lg hover:border-yellow-500/50 transition">
+            <div class="bg-blue-950/50 p-4 rounded-2xl border border-blue-800/80 text-center shadow-lg">
                 <img src="benter.jpg" class="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-yellow-400 object-cover">
-                <h4 class="font-bold text-lg esports-font text-white leading-none">Benter</h4>
-                <p class="text-[10px] text-yellow-400 uppercase tracking-wider esports-font mt-0.5">Gold Lane</p>
+                <h4 class="font-bold text-sm text-white">Benter</h4>
+                <p class="text-[9px] text-yellow-400 uppercase tracking-wider font-semibold mt-0.5">Gold Lane</p>
             </div>
-            <div class="col-span-2 bg-blue-950/50 p-4 rounded-2xl border border-blue-800/80 text-center shadow-lg hover:border-yellow-500/50 transition">
+            <div class="col-span-2 bg-blue-950/50 p-4 rounded-2xl border border-blue-800/80 text-center shadow-lg">
                 <img src="jomie.jpg" class="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-yellow-400 object-cover">
-                <h4 class="font-bold text-lg esports-font text-white leading-none">Jomie Rae</h4>
-                <p class="text-[10px] text-yellow-400 uppercase tracking-wider esports-font mt-0.5">6th Man</p>
+                <h4 class="font-bold text-sm text-white">Jomie Rae</h4>
+                <p class="text-[9px] text-yellow-400 uppercase tracking-wider font-semibold mt-0.5">6th Man</p>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="text-center py-8 text-[10px] text-blue-300/50 uppercase tracking-widest mt-10 esports-font text-sm">
+    <footer class="text-center py-8 text-[10px] text-blue-300/50 uppercase tracking-widest mt-10">
         &copy; 2026 Solano Squad • Solano Representatives
     </footer>
 </body>
