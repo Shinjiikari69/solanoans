@@ -6,92 +6,104 @@
     <title>Solano Squad Roster | Nueva Vizcaya</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
-            theme: { extend: { colors: { nv: { gold: '#d4af37', dark: '#081c15', card: 'rgba(17, 34, 17, 0.8)' } } } }
+            theme: { 
+                extend: { 
+                    colors: { 
+                        solano: {
+                            blue: '#002855', // Deep Royal Blue
+                            accent: '#00509d', // Lighter Blue
+                            yellow: '#ffcc00'  // Signature Yellow
+                        } 
+                    } 
+                } 
+            }
         }
     </script>
     <style>
-        body {
-            background-color: #081c15;
-            position: relative;
-        }
-        /* Logo Background Overlay */
+        body { background-color: #001220; }
         .bg-logo-blur {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-image: url('logo.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: blur(20px) brightness(0.2);
-            z-index: -1;
-            opacity: 0.4;
+            background-size: cover; background-position: center;
+            filter: blur(25px) brightness(0.15);
+            z-index: -1; opacity: 0.5;
         }
     </style>
 </head>
-<body class="text-gray-100 font-sans min-h-screen flex flex-col justify-between">
+<body class="text-white font-sans min-h-screen">
     <div class="bg-logo-blur"></div>
 
-    <header class="border-b border-nv-gold/20 bg-nv-dark/60 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+    <header class="border-b border-solano-yellow/30 bg-solano-blue/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <div class="w-12 h-12 rounded-full p-0.5 bg-gradient-to-tr from-nv-gold to-yellow-600 shadow-lg overflow-hidden">
-                    <img src="logo.jpg" alt="Solano Logo" class="w-full h-full object-cover rounded-full">
-                </div>
+                <img src="logo.jpg" alt="Logo" class="w-10 h-10 rounded-full border-2 border-solano-yellow">
                 <div>
-                    <h1 class="text-xl font-extrabold tracking-tight text-white">SOLANO</h1>
-                    <p class="text-xs text-nv-gold font-medium tracking-wider uppercase">Nueva Vizcaya Representatives</p>
+                    <h1 class="text-lg font-black tracking-widest text-white">SOLANO</h1>
+                    <p class="text-[10px] text-solano-yellow font-bold uppercase">Nueva Vizcaya Representatives</p>
                 </div>
             </div>
-            <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-nv-gold/10 text-nv-gold border border-nv-gold/30">ACTIVE TEAM</span>
+            <span class="px-3 py-1 rounded-full text-[9px] font-black bg-solano-yellow text-solano-blue uppercase">Active</span>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-4xl sm:text-6xl font-black text-white mb-4 italic tracking-tighter">MEET THE <span class="text-nv-gold">SQUAD</span></h2>
-        </div>
+    <main class="max-w-4xl mx-auto px-4 py-10">
+        <h2 class="text-4xl font-black text-center mb-10 italic">MEET THE <span class="text-solano-yellow">SQUAD</span></h2>
 
-        <div class="mb-16">
-            <div class="flex items-center space-x-3 mb-8 border-b border-nv-gold/20 pb-4">
-                <i class="fa-solid fa-crown text-nv-gold"></i>
-                <h3 class="text-xl font-bold tracking-wide uppercase">Coaching & Management</h3>
+        <!-- Coaches -->
+        <div class="grid grid-cols-2 gap-4 mb-12">
+            <div class="bg-solano-blue/50 border border-solano-yellow/50 p-4 rounded-xl text-center">
+                <img src="zydren.png" class="w-20 h-20 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
+                <h4 class="font-bold text-sm">Zydren</h4>
+                <p class="text-[9px] text-solano-yellow font-bold uppercase">Head Coach</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                <div class="rounded-2xl bg-nv-card border border-nv-gold/30 p-6 flex flex-col items-center text-center">
-                    <div class="w-32 h-32 mb-4 rounded-full p-1 bg-nv-gold"><img src="zydren.png" alt="Zydren" class="w-full h-full object-cover rounded-full"></div>
-                    <h4 class="text-xl font-bold text-white">Zydren</h4>
-                    <p class="text-nv-gold text-xs uppercase font-bold">Head Coach</p>
-                </div>
-                <div class="rounded-2xl bg-nv-card border border-nv-gold/30 p-6 flex flex-col items-center text-center">
-                    <div class="w-32 h-32 mb-4 rounded-full p-1 bg-nv-gold"><img src="carlo.jpg" alt="Carlo" class="w-full h-full object-cover rounded-full"></div>
-                    <h4 class="text-xl font-bold text-white">Carlo D.</h4>
-                    <p class="text-nv-gold text-xs uppercase font-bold">Team Manager</p>
-                </div>
+            <div class="bg-solano-blue/50 border border-solano-yellow/50 p-4 rounded-xl text-center">
+                <img src="carlo.jpg" class="w-20 h-20 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
+                <h4 class="font-bold text-sm">Carlo D.</h4>
+                <p class="text-[9px] text-solano-yellow font-bold uppercase">Manager</p>
             </div>
         </div>
 
-        <div>
-            <div class="flex items-center space-x-3 mb-8 border-b border-nv-gold/20 pb-4">
-                <i class="fa-solid fa-gamepad text-nv-gold"></i>
-                <h3 class="text-xl font-bold tracking-wide uppercase">Active Roster</h3>
+        <!-- Roster -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <!-- Player Cards -->
+            <div class="bg-solano-blue/50 p-3 rounded-lg border border-solano-accent text-center">
+                <img src="shinji.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
+                <h4 class="font-bold text-xs">Shinji</h4>
+                <p class="text-[9px] text-solano-yellow uppercase">Jungler</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Roster Cards -->
-                <div class="bg-nv-card border border-white/5 p-4 rounded-xl text-center"><img src="shinji.jpg" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-nv-gold"><h4 class="font-bold">Shinji</h4><p class="text-[10px] text-nv-gold uppercase">Jungler</p></div>
-                <div class="bg-nv-card border border-white/5 p-4 rounded-xl text-center"><img src="jassel.jpg" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-nv-gold"><h4 class="font-bold">Jassel</h4><p class="text-[10px] text-nv-gold uppercase">Roamer</p></div>
-                <div class="bg-nv-card border border-white/5 p-4 rounded-xl text-center"><img src="dags.jpg" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-nv-gold"><h4 class="font-bold">Dags</h4><p class="text-[10px] text-nv-gold uppercase">EXP Lane</p></div>
-                <div class="bg-nv-card border border-white/5 p-4 rounded-xl text-center"><img src="allen.jpg" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-nv-gold"><h4 class="font-bold">Allen</h4><p class="text-[10px] text-nv-gold uppercase">Mid Lane</p></div>
-                <div class="bg-nv-card border border-white/5 p-4 rounded-xl text-center"><img src="umali.jpg" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-nv-gold"><h4 class="font-bold">Umali</h4><p class="text-[10px] text-nv-gold uppercase">EXP Lane</p></div>
-                <div class="bg-nv-card border border-white/5 p-4 rounded-xl text-center"><img src="benter.jpg" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-nv-gold"><h4 class="font-bold">Benter</h4><p class="text-[10px] text-nv-gold uppercase">Gold Lane</p></div>
-                <div class="bg-nv-card border border-white/5 p-4 rounded-xl text-center"><img src="jomie.jpg" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-nv-gold"><h4 class="font-bold">Jomie Rae</h4><p class="text-[10px] text-nv-gold uppercase">6th Man</p></div>
+            <div class="bg-solano-blue/50 p-3 rounded-lg border border-solano-accent text-center">
+                <img src="jassel.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
+                <h4 class="font-bold text-xs">Jassel</h4>
+                <p class="text-[9px] text-solano-yellow uppercase">Roamer</p>
+            </div>
+            <div class="bg-solano-blue/50 p-3 rounded-lg border border-solano-accent text-center">
+                <img src="dags.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
+                <h4 class="font-bold text-xs">Dags</h4>
+                <p class="text-[9px] text-solano-yellow uppercase">EXP Lane</p>
+            </div>
+            <div class="bg-solano-blue/50 p-3 rounded-lg border border-solano-accent text-center">
+                <img src="allen.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
+                <h4 class="font-bold text-xs">Allen</h4>
+                <p class="text-[9px] text-solano-yellow uppercase">Mid Lane</p>
+            </div>
+            <div class="bg-solano-blue/50 p-3 rounded-lg border border-solano-accent text-center">
+                <img src="umali.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
+                <h4 class="font-bold text-xs">Umali</h4>
+                <p class="text-[9px] text-solano-yellow uppercase">EXP Lane</p>
+            </div>
+            <div class="bg-solano-blue/50 p-3 rounded-lg border border-solano-accent text-center">
+                <img src="benter.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
+                <h4 class="font-bold text-xs">Benter</h4>
+                <p class="text-[9px] text-solano-yellow uppercase">Gold Lane</p>
+            </div>
+            <div class="bg-solano-blue/50 p-3 rounded-lg border border-solano-accent text-center">
+                <img src="jomie.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-solano-yellow">
+                <h4 class="font-bold text-xs">Jomie Rae</h4>
+                <p class="text-[9px] text-solano-yellow uppercase">6th Man</p>
             </div>
         </div>
     </main>
-
-    <footer class="text-center py-6 text-[10px] text-gray-500 uppercase tracking-widest">
-        &copy; 2026 Solano Team • Nueva Vizcaya
-    </footer>
 </body>
 </html>
